@@ -315,6 +315,34 @@
                     <li>Find a valid solution that connects all pieces</li>
                 </ol>
 
+                <h4>Note:</h4>
+                <p>The execustion time will be higher in Torn.com's live environment because of other scripts running on the page. So far in my testing, the maximum time taken in live environment is yet to exceed 700ms.</p>
+                <p>If the puzzle sample you are using is taking longer, try changing increasing the argument in <code>this.#createAdjsNreducePossibilities(3);</code> in "solve" method in the lib's code to 4 or 5.</p>
+                <pre><code class="language-javascript">
+async solve() {
+
+    return new Promise((resolve, reject) => {
+        try {
+            this.#createPossibleOptions();
+            this.#createAdjsNreducePossibilities(3); // increase this to 4 or 5 if your puzzle sample is taking too long to solve.
+            
+            const solution = this.#generateCombinations();
+            if (solution) {
+                resolve(solution);
+            } else {
+                    
+                reject("No solution found.");
+            }
+        } catch (err) {
+            reject(err);
+
+        }
+    });
+}
+                </code></pre>
+                <p>I have set it by default to 3 because in my testing I found that on increasing it after the 3rd time, it did not reduce the possible solutions dramatically.</p>
+                <p>Running it 3 times was enough to get possibilities from <code>2 million</code> to less than <code>40 thousand</code>. Running it more than that, did not contribute much in terms of performance.</p>
+
                 <div class="features">
                     <div class="feature">
                         <h3>Basic Usage</h3>
@@ -502,14 +530,17 @@ solver.solve()
         document.getElementById('solveBtn').addEventListener('click', () => {
             const solver = new GarlandSolver(puzzleData);
             updateStatus('Solving puzzle...', true);
-
+            let start = performance.now();
+            let end;
             solver.solve()
                 .then(solution => {
+                    end = performance.now();
                     puzzleData = solution;
                     populateGrid(puzzleData);
-                    updateStatus('Puzzle solved successfully!', true);
+                    updateStatus(`Puzzle solved successfully in ${(end - start).toFixed(2)} ms`, true);
                 })
                 .catch(err => {
+                    end = performance.now();
                     console.error('Error:', err);
                     updateStatus('Failed to solve puzzle: ' + err.message, false);
                 });

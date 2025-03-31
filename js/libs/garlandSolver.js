@@ -561,21 +561,20 @@ class GarlandSolver {
         }
     }
     async solve() {
-        console.time("GarlandSolver");
         return new Promise((resolve, reject) => {
             try {
                 this.#createPossibleOptions();
                 this.#createAdjsNreducePossibilities(3);
                 const solution = this.#generateCombinations();
                 if (solution) {
-                    console.timeEnd("GarlandSolver");
+                   
                     resolve(solution);
                 } else {
-                    console.timeEnd("GarlandSolver");
+                    
                     reject("No solution found.");
                 }
             } catch (err) {
-                console.timeEnd("GarlandSolver");
+                
                 reject(err);
 
             }
