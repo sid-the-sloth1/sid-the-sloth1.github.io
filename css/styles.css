@@ -270,7 +270,9 @@ body {
 .footer-legal a:hover {
     color: var(--primary-color);
 }
-
+.box1, .box2 {
+    width: 50%;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .main-nav {
@@ -304,6 +306,9 @@ body {
     .footer-legal {
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .box1, .box2 {
+        width: auto;
     }
 }
 
