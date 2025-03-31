@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SourTable Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .test-section {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .test-controls {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
+
+        .success {
+            color: green;
+            margin: 10px 0;
+        }
+
+        button:disabled, button:disabled:hover {
+            background-color: #cccccc!important;
+            cursor: not-allowed!important;
+        }
+
+        #back-to-homepage a {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            /* Adjust based on font size (e.g., 0.5em = half the font size) */
+            text-decoration: none;
+
+        }
+
+        #back-to-homepage a svg {
+            flex-shrink: 0;
+            width: 1em;
+            /* Makes SVG size match text size */
+            height: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back-to-homepage">
+        <a href="../../../docs/sourTable.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" />
+            </svg>
+            <span>Back to Documentation Page</span>
+        </a>
+    </div>
+    <h1>SourTable Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Basic Table Sorting</h2>
+        <div class="test-controls">
+            <button id="initTest1" onclick="initTest1()">Initialize SourTable</button>
+            <button id="disengageTest1" onclick="disengageTest1()" disabled>Disengage</button>
+        </div>
+        <div id="test1-result"></div>
+        <table id="test1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Join Date</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>32</td>
+                <td>$75,000</td>
+                <td data-join-date="20200115">2020-01-15</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>28</td>
+                <td>$82,500</td>
+                <td data-join-date="20190520">2019-05-20</td>
+            </tr>
+            <tr>
+                <td>Bob Johnson</td>
+                <td>45</td>
+                <td>$65,000</td>
+                <td data-join-date="20211201">2021-12-01</td>
+            </tr>
+            <tr>
+                <td>Alice Brown</td>
+                <td>36</td>
+                <td>$91,000</td>
+                <td data-join-date="20181110">2018-11-10</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Excluded Columns</h2>
+        <div class="test-controls">
+            <button onclick="initTest2()">Initialize (exclude Age column)</button>
+        </div>
+        <div id="test2-result"></div>
+        <table id="test2">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>In Stock</th>
+            </tr>
+            <tr>
+                <td>Laptop</td>
+                <td>$999.99</td>
+                <td>15</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>$699.99</td>
+                <td>32</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Tablet</td>
+                <td>$349.99</td>
+                <td>8</td>
+                <td>No</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Attribute-based Sorting</h2>
+        <div class="test-controls">
+            <button onclick="initTest3()">Initialize (sort by data-join-date)</button>
+        </div>
+        <div id="test3-result"></div>
+        <table id="test3">
+            <tr>
+                <th>Employee</th>
+                <th>Department</th>
+                <th>Join Date (visible)</th>
+            </tr>
+            <tr>
+                <td>Michael</td>
+                <td>Marketing</td>
+                <td data-join-date="20220310">March 10, 2022</td>
+            </tr>
+            <tr>
+                <td>Sarah</td>
+                <td>Sales</td>
+                <td data-join-date="20201105">November 5, 2020</td>
+            </tr>
+            <tr>
+                <td>David</td>
+                <td>IT</td>
+                <td data-join-date="20230415">April 15, 2023</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Error Handling</h2>
+        <div class="test-controls">
+            <button onclick="testInvalidTable()">Test Invalid Table Element</button>
+            <button onclick="testMissingAttribute()">Test Missing Attribute</button>
+            <button onclick="testInvalidColumn()">Test Invalid Column</button>
+        </div>
+        <div id="test4-result"></div>
+        <table id="test4">
+            <tr>
+                <th>ID</th>
+                <th>Value</th>
+                <th data-test="123">Special</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>100</td>
+                <td data-special-value="42">Answer</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>200</td>
+                <td>No data attribute</td>
+            </tr>
+        </table>
+    </div>
+    <script src="../../../js/libs/sourtable.js"></script>
+    <script>
+        // Test 1: Basic functionality
+        let sourTable1;
+        function initTest1() {
+            try {
+                const table = document.getElementById('test1');
+                sourTable1 = new SourTable(table);
+                sourTable1.initiate();
+                document.getElementById('test1-result').innerHTML =
+                    '<div class="success">SourTable initialized successfully. Click headers to sort.</div>';
+                document.querySelector("#initTest1").disabled = true;
+                document.querySelector("#disengageTest1").disabled = false;
+            } catch (error) {
+                document.getElementById('test1-result').innerHTML =
+                    `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+
+        function disengageTest1() {
+            try {
+                if (sourTable1) {
+                    sourTable1.disengage();
+                    sourTable1 = null;
+                    document.getElementById('test1-result').innerHTML =
+                        '<div class="success">SourTable disengaged successfully.</div>';
+                }
+                document.querySelector("#initTest1").disabled = false;
+                document.querySelector("#disengageTest1").disabled = true;
+            } catch (error) {
+                document.getElementById('test1-result').innerHTML =
+                    `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Test 2: Excluded columns
+        let sourTable2;
+        function initTest2() {
+            try {
+                const table = document.getElementById('test2');
+                sourTable2 = new SourTable(table, [1]); // Exclude column 1 (Price)
+                sourTable2.initiate();
+                document.getElementById('test2-result').innerHTML =
+                    '<div class="success">SourTable initialized with column 1 (Price) excluded from sorting.</div>';
+            } catch (error) {
+                document.getElementById('test2-result').innerHTML =
+                    `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Test 3: Attribute-based sorting
+        let sourTable3;
+        function initTest3() {
+            try {
+                const table = document.getElementById('test3');
+                sourTable3 = new SourTable(table, [], { col_2: 'data-join-date' });
+                sourTable3.initiate();
+                document.getElementById('test3-result').innerHTML =
+                    '<div class="success">SourTable initialized to sort column 2 by data-join-date attribute.</div>';
+            } catch (error) {
+                document.getElementById('test3-result').innerHTML =
+                    `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Test 4: Error cases
+        function testInvalidTable() {
+            try {
+                new SourTable(document.body); // body is not a table
+                document.getElementById('test4-result').innerHTML =
+                    '<div class="error">Test failed - should have thrown error</div>';
+            } catch (error) {
+                document.getElementById('test4-result').innerHTML =
+                    `<div class="success">Correctly threw error: ${error.message}</div>`;
+            }
+        }
+
+        function testMissingAttribute() {
+            try {
+                const table = document.getElementById('test4');
+                const sourTable = new SourTable(table, [], { col_2: 'special-value' });
+                sourTable.initiate();
+                sourTable.sort(2, "asc", "attr=special-value");
+                document.getElementById('test4-result').innerHTML =
+                    '<div class="error">Test failed - should have thrown error on sort</div>';
+            } catch (error) {
+                document.getElementById('test4-result').innerHTML =
+                    `<div class="success">Correctly threw error: ${error.message}</div>`;
+            }
+        }
+
+        function testInvalidColumn() {
+            try {
+                const table = document.getElementById('test4');
+                const sourTable = new SourTable(table);
+                // Try to sort by non-existent column
+                sourTable.sort(10, 'asc');
+                document.getElementById('test4-result').innerHTML =
+                    '<div class="error">Test failed - should have thrown error</div>';
+            } catch (error) {
+                document.getElementById('test4-result').innerHTML =
+                    `<div class="success">Correctly threw error: ${error.message}</div>`;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

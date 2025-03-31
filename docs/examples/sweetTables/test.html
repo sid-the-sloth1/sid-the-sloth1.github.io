@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetTable Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .div-table {
+            display: table;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .div-row {
+            display: table-row;
+        }
+
+        .div-cell {
+            display: table-cell;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .div-header {
+            font-weight: bold;
+            background-color: #f2f2f2;
+        }
+
+        .ul-table {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .ul-row {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+
+        div.ul_header .ul-row {
+            font-weight: bold;
+            background-color: #f2f2f2;
+        }
+
+        .ul-cell {
+            flex: 1;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #cccccc !important;
+            color: #666666 !important;
+            pointer-events: none !important;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+        #back-to-homepage a {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            /* Adjust based on font size (e.g., 0.5em = half the font size) */
+            text-decoration: none;
+
+        }
+
+        #back-to-homepage a svg {
+            flex-shrink: 0;
+            width: 1em;
+            /* Makes SVG size match text size */
+            height: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="back-to-homepage">
+        <a href="../../sweetTable.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"/></svg>
+            <span>Back to SweetTable Documentation</span>
+        </a>
+    </div>
+    <h1>SweetTable Library Test</h1>
+
+    <!-- Standard HTML Table -->
+    <section>
+        <h2>Standard HTML Table</h2>
+        <div class="controls">
+            <button id="initStandardTable" onclick="initStandardTable()">Initiate Sorting</button>
+            <button id="disengageStandardTable" onclick="disengageStandardTable()" disabled>Disengage Sorting</button>
+        </div>
+        <table id="standardTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>Join Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>32</td>
+                    <td>$75,000</td>
+                    <td data-date="2020-05-15">May 15, 2020</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>28</td>
+                    <td>$82,500</td>
+                    <td data-date="2019-11-03">Nov 3, 2019</td>
+                </tr>
+                <tr>
+                    <td>Bob Johnson</td>
+                    <td>45</td>
+                    <td>$65,000</td>
+                    <td data-date="2021-02-20">Feb 20, 2021</td>
+                </tr>
+                <tr>
+                    <td>Alice Williams</td>
+                    <td>29</td>
+                    <td>$95,000</td>
+                    <td data-date="2018-07-10">Jul 10, 2018</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Div-based Table -->
+    <section>
+        <h2>Div-based Table</h2>
+        <div class="controls">
+            <button id="initDivTable" onclick="initDivTable()">Initiate Sorting</button>
+            <button id="disengageDivTable" onclick="disengageDivTable()" disabled>Disengage Sorting</button>
+        </div>
+        <div id="divTable" class="div-table">
+            <div class="div-row">
+                <div class="div-cell div-header">Product</div>
+                <div class="div-cell div-header">Price</div>
+                <div class="div-cell div-header">Stock</div>
+                <div class="div-cell div-header">Rating</div>
+            </div>
+            <div class="div-row">
+                <div class="div-cell">Laptop</div>
+                <div class="div-cell" data-price="999.99">$999.99</div>
+                <div class="div-cell">15</div>
+                <div class="div-cell" data-rating="4.5">★★★★☆</div>
+            </div>
+            <div class="div-row">
+                <div class="div-cell">Phone</div>
+                <div class="div-cell" data-price="699.99">$699.99</div>
+                <div class="div-cell">32</div>
+                <div class="div-cell" data-rating="4.2">★★★★☆</div>
+            </div>
+            <div class="div-row">
+                <div class="div-cell">Tablet</div>
+                <div class="div-cell" data-price="349.99">$349.99</div>
+                <div class="div-cell">8</div>
+                <div class="div-cell" data-rating="3.8">★★★☆</div>
+            </div>
+            <div class="div-row">
+                <div class="div-cell">Monitor</div>
+                <div class="div-cell" data-price="249.99">$249.99</div>
+                <div class="div-cell">12</div>
+                <div class="div-cell" data-rating="4.7">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UL-based Table -->
+    <section>
+        <h2>UL-based Table</h2>
+        <div class="controls">
+            <button id="initUlTable" onclick="initUlTable()">Initiate Sorting</button>
+            <button id="disengageUlTable" onclick="disengageUlTable()" disabled>Disengage Sorting</button>
+        </div>
+        <ul id="ulTable" class="ul-table">
+            <div class="ul_header">
+                <li class="ul-row">
+                    <div class="ul-cell">Country</div>
+                    <div class="ul-cell">Population</div>
+                    <div class="ul-cell">Area (km²)</div>
+                    <div class="ul-cell">Density</div>
+                </li>
+            </div>
+            <div class="ul_body">
+                <li class="ul-row">
+                    <div class="ul-cell">USA</div>
+                    <div class="ul-cell">331,000,000</div>
+                    <div class="ul-cell">9,833,520</div>
+                    <div class="ul-cell">33.6</div>
+                </li>
+                <li class="ul-row">
+                    <div class="ul-cell">China</div>
+                    <div class="ul-cell">1,412,000,000</div>
+                    <div class="ul-cell">9,596,960</div>
+                    <div class="ul-cell">147.8</div>
+                </li>
+                <li class="ul-row">
+                    <div class="ul-cell">India</div>
+                    <div class="ul-cell">1,392,000,000</div>
+                    <div class="ul-cell">3,287,590</div>
+                    <div class="ul-cell">423.3</div>
+                </li>
+                <li class="ul-row">
+                    <div class="ul-cell">Russia</div>
+                    <div class="ul-cell">146,000,000</div>
+                    <div class="ul-cell">17,098,240</div>
+                    <div class="ul-cell">8.5</div>
+                </li>
+            </div>
+        </ul>
+    </section>
+    <section>
+        <h2>Mixed Content Table</h2>
+        <div class="controls">
+            <button id="initMixedTable" onclick="initMixedTable()">Initiate Sorting</button>
+            <button id="disengageMixedTable" onclick="disengageMixedTable()" disabled>Disengage Sorting</button>
+        </div>
+        <table id="mixedTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Last Active</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#1001</td>
+                    <td><span class="user-avatar">👤</span> John Doe</td>
+                    <td><span class="status-badge active">Active</span></td>
+                    <td data-iso="2023-05-15T14:30:00Z">2 hours ago</td>
+                    <td><progress value="75" max="100"></progress> 75%</td>
+                </tr>
+                <tr>
+                    <td>#1002</td>
+                    <td><span class="user-avatar">👩</span> Jane Smith</td>
+                    <td><span class="status-badge inactive">Inactive</span></td>
+                    <td data-iso="2023-05-10T09:15:00Z">5 days ago</td>
+                    <td><progress value="30" max="100"></progress> 30%</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Empty Table</h2>
+        <div class="controls">
+            <button id="initEmptyTable" onclick="initEmptyTable()">Initiate Sorting</button>
+            <button id="disengageEmptyTable" onclick="disengageEmptyTable()" disabled>Disengage Sorting</button>
+        </div>
+        <table id="emptyTable">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Intentionally empty -->
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Performance Test (1000 Rows)</h2>
+        <div class="controls">
+            <button id="initLargeTable" onclick="initLargeTable()">Initiate</button>
+            <button onclick="sortLargeTable()">Sort Random Column</button>
+            <span id="perfResult"></span>
+        </div>
+        <table id="largeTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Value</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script>
+        let largeTableInstance;
+        function initLargeTable() {
+            const table = document.getElementById('largeTable');
+            const tbody = table.querySelector('tbody');
+            tbody.innerHTML = '';
+
+            // Generate 1000 rows
+            for (let i = 0; i < 1000; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${10000 + i}</td>
+                    <td>${(Math.random() * 1000).toFixed(2)}</td>
+                    <td data-ts="${Date.now() - Math.floor(Math.random() * 1e8)}">
+                        ${new Date(Date.now() - Math.floor(Math.random() * 1e8)).toLocaleString()}
+                    </td>
+                `;
+                tbody.appendChild(row);
+            }
+
+            largeTableInstance = new SweetTable(table, [], {
+                'col_2': 'data-ts'
+            });
+            largeTableInstance.initiate();
+            document.getElementById('initLargeTable').disabled = true;
+        }
+
+        function sortLargeTable() {
+            if (!largeTableInstance) return;
+            const start = performance.now();
+            const col = Math.floor(Math.random() * 3);
+            largeTableInstance.sort(col, Math.random() > 0.5 ? 'asc' : 'desc');
+            const time = performance.now() - start;
+            document.getElementById('perfResult').textContent = `Sorted column ${col} in ${time.toFixed(2)}ms`;
+        }
+    </script>
+    <script src="../../../js/libs/sweetTable.js"></script>
+    <script>
+        // Standard HTML Table
+        let standardTableInstance;
+        function initStandardTable() {
+            const table = document.getElementById('standardTable');
+            standardTableInstance = new SweetTable(table, [], {
+                'col_3': 'data-date' // Use the data-date attribute for sorting the date column
+            });
+
+            // Add custom parse function for dates
+            standardTableInstance.setCustomParseFunction(3, (text) => {
+                return new Date(text.trim()).getTime();
+            });
+
+            standardTableInstance.initiate();
+            document.getElementById('initStandardTable').disabled = true;
+            document.getElementById('disengageStandardTable').disabled = false;
+        }
+
+        function disengageStandardTable() {
+            if (standardTableInstance) {
+                standardTableInstance.disengage();
+                standardTableInstance = null;
+            }
+            document.getElementById('initStandardTable').disabled = false;
+            document.getElementById('disengageStandardTable').disabled = true;
+        }
+
+        // Div-based Table
+        let divTableInstance;
+        function initDivTable() {
+            const divTable = document.getElementById('divTable');
+            divTableInstance = new SweetTable(divTable, [], {
+                'col_1': 'data-price', // Use data-price attribute for sorting
+                'col_3': 'data-rating' // Use data-rating attribute for sorting
+            });
+
+            // Set custom functions for div-based table
+            divTableInstance.setCustomGetHeadersFunction(table => {
+                return table.querySelectorAll('.div-row:first-child .div-cell');
+            });
+
+            divTableInstance.setCustomGetRowsFunction(table => {
+                return Array.from(table.querySelectorAll('.div-row')).slice(1);
+            });
+
+            divTableInstance.setCustomGetTbodyFunction(table => {
+                return table;
+            });
+
+            divTableInstance.setCustomGetCellFromRowFunction(row => {
+                return row.querySelectorAll('.div-cell');
+            });
+
+            // Add custom parse function for ratings
+            divTableInstance.setCustomParseFunction(3, (text) => {
+                return parseFloat(text);
+            });
+
+            divTableInstance.initiate();
+            document.getElementById('initDivTable').disabled = true;
+            document.getElementById('disengageDivTable').disabled = false;
+        }
+
+        function disengageDivTable() {
+            if (divTableInstance && divTableInstance.isEngaged()) {
+                divTableInstance.disengage();
+                divTableInstance = null;
+                document.getElementById('initDivTable').disabled = false;
+                document.getElementById('disengageDivTable').disabled = true;
+            }
+        }
+
+        // UL-based Table
+        let ulTableInstance;
+        function initUlTable() {
+            const ulTable = document.getElementById('ulTable');
+            ulTableInstance = new SweetTable(ulTable);
+
+            // Set custom functions for ul-based table
+            ulTableInstance.setCustomGetHeadersFunction(table => {
+                return table.querySelectorAll(`div.ul_header .ul-cell`);
+            });
+
+            ulTableInstance.setCustomGetRowsFunction(table => {
+                return table.querySelectorAll(`div.ul_body .ul-row`);
+            });
+/*
+            ulTableInstance.setCustomGetTbodyFunction(table => {
+                return table.querySelector(`div.ul_body`);
+            });
+            */
+
+            ulTableInstance.setCustomGetCellFromRowFunction(row => {
+                return row.querySelectorAll('.ul-cell');
+            });
+
+            // Add custom parse function for population numbers with commas
+            ulTableInstance.setCustomParseFunction(1, (text) => {
+                return parseInt(text.replace(/,/g, ''));
+            });
+
+            // Add custom parse function for area numbers with commas
+            ulTableInstance.setCustomParseFunction(2, (text) => {
+                return parseInt(text.replace(/,/g, ''));
+            });
+
+            ulTableInstance.initiate();
+            document.getElementById('initUlTable').disabled = true;
+            document.getElementById('disengageUlTable').disabled = false;
+        }
+
+        function disengageUlTable() {
+            if (ulTableInstance && ulTableInstance.isEngaged()) {
+                ulTableInstance.disengage();
+                ulTableInstance = null;
+                document.getElementById('initUlTable').disabled = false;
+                document.getElementById('disengageUlTable').disabled = true;
+            }
+        }
+
+        let mixedTableInstance;
+        function initMixedTable() {
+            const table = document.getElementById('mixedTable');
+            mixedTableInstance = new SweetTable(table, [], {
+                'col_3': 'data-iso',
+                'col_4': 'value' // For progress element
+            });
+            mixedTableInstance.setCustomParseFunction(3, (text) => {
+                return Date.parse(text);
+            });
+
+            // Custom parser for progress column
+            mixedTableInstance.setCustomGetCellFromRowFunction(row => {
+                const cells = Array.from(row.children);
+                // Replace progress cell with its value
+                cells[4] = cells[4].querySelector('progress');
+                return cells;
+            });
+
+            mixedTableInstance.initiate();
+            document.getElementById('initMixedTable').disabled = true;
+            document.getElementById('disengageMixedTable').disabled = false;
+        }
+        function disengageMixedTable() {
+            mixedTableInstance.disengage();
+            mixedTableInstance = null;
+            document.getElementById('initMixedTable').disabled = false;
+            document.getElementById('disengageMixedTable').disabled = true;
+        }
+
+
+        ////
+        let emptyTableInstance;
+        function initEmptyTable() {
+            const table = document.getElementById('emptyTable');
+            emptyTableInstance = new SweetTable(table);
+
+            try {
+                emptyTableInstance.initiate();
+                console.log("Empty table initiated successfully");
+                document.getElementById('initEmptyTable').disabled = true;
+                document.getElementById('disengageEmptyTable').disabled = false;
+            } catch (e) {
+                console.error("SweetTable handled empty table:", e.message);
+            }
+        }
+        function disengageEmptyTable() {
+            if (emptyTableInstance && emptyTableInstance.isEngaged()) {
+                emptyTableInstance.disengage();
+                emptyTableInstance = null;
+                document.getElementById('initEmptyTable').disabled = false;
+                document.getElementById('disengageEmptyTable').disabled = true;
+            }
+        }
+
+        // Add to standard table section
+        document.querySelector('.controls').innerHTML +=
+            '<button onclick="addDynamicRow()">Add Dynamic Row</button>';
+
+        function addDynamicRow() {
+            if (!standardTableInstance) return;
+
+            const tbody = document.querySelector('#standardTable tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+        <td>Dynamic User</td>
+        <td>${Math.floor(Math.random() * 50) + 18}</td>
+        <td>$${(Math.random() * 90000 + 30000).toFixed(2)}</td>
+        <td data-date="${new Date().toISOString().split('T')[0]}">Today</td>
+    `;
+            tbody.appendChild(newRow);
+
+            // Test if sorting still works
+
+        }
+    </script>
+</body>
+
+</html>

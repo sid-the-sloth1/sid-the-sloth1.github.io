@@ -1,0 +1,113 @@
+/* Popup Styles - No Animations */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+   
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Changed from ::before to separate element for better control */
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white; /* Ensure text stays white on colored header */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    transition: opacity 0.2s;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.popup-content {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    background-color: var(--bg-color); /* Ensure content area uses theme bg */
+    color: var(--text-color); /* Ensure text color follows theme */
+}
+
+/* Headings inside popup */
+.popup h1, .popup h2, .popup h3, 
+.popup h4, .popup h5, .popup h6 {
+    margin: 1rem 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+/* Lists inside popup */
+.popup ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.popup ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.popup ul li::marker {
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .popup {
+        width: 95%;
+    }
+    
+    .popup-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .popup-content {
+        padding: 1rem;
+    }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .popup {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .popup-header {
+    background-color: var(--primary-hover);
+}
