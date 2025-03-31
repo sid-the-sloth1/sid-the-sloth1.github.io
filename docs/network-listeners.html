@@ -178,22 +178,7 @@
         });</code></pre>
                 </div>
         
-                <div class="feature-card">
-                    <h3 id="api-analytics">API Analytics</h3>
-                    <pre><code class="language-javascript">
-        const apiStats = {
-            calls: 0,
-            totalSize: 0
-        };
-        
-        window.addEventListener("hardy-fetch", (event) => {
-            if (event.detail.url.includes("/api/")) {
-                apiStats.calls++;
-                apiStats.totalSize += event.detail.response.length;
-                console.log('API Stats:', apiStats);
-            }
-        });</code></pre>
-                </div>
+         
         
                 <div class="feature-card">
                     <h3 id="error-tracking">Error Tracking</h3>
