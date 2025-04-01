@@ -272,6 +272,12 @@ body {
 }
 .box1, .box2 {
     width: 50%;
+    
+}
+ .box2 a {
+    background: var(--bg-secondary);
+    text-decoration: none;
+    color: var(--text-color);
 }
 /* Responsive */
 @media (max-width: 768px) {
@@ -290,11 +296,94 @@ body {
     .table-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        background: var(--bg-color);
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+    
+    .col-name {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+    
+    .col-name svg {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        color: var(--currentColor);
+    }
+    
+    .col-desc {
+        width: 100%;
+        color: var(--text-light);
+        line-height: 1.5;
+        font-size: 0.95rem;
+    }
+    
+    .col-version {
+        width: 100%;
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
         gap: 0.5rem;
     }
     
-    .col-name, .col-desc, .col-version, .col-action {
+    .col-version::before {
+        content: "Version:";
+        font-weight: 600;
+        color: var(--text-color);
+    }
+    
+    .col-action {
         width: 100%;
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .box1, .box2 {
+        width: auto;
+    }
+    
+    .box1 a, .box2 a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--bg-secondary);
+        border-radius: 6px;
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        transition: background 0.2s;
+    }
+    
+    .box1 a:hover, .box2 a:hover {
+        background: var(--border-color);
+    }
+    
+    .box1 a {
+        color: var(--primary-color);
+    }
+    
+    .box1 a:hover {
+        color: var(--primary-hover);
+    }
+    
+    .box2 a svg {
+        width: 18px;
+        height: 18px;
     }
     
     .footer-bottom {
@@ -307,9 +396,6 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .box1, .box2 {
-        width: auto;
-    }
 }
 
 @media (max-width: 480px) {
@@ -319,5 +405,19 @@ body {
     
     .home-content {
         padding: 1rem;
+    }
+    
+    .table-row {
+        padding: 1.25rem;
+    }
+    
+    .col-action {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .box1 a, .box2 a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
     }
 }
