@@ -5,11 +5,19 @@
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardy | JavaScript Libraries & Tampermonkey Scripts Documentation</title>
-    <meta name="description"
-        content="Documentation for JavaScript libraries (SweetTable, SourTable) and Tampermonkey scripts for Torn.com & CartelEmpire.online">
+
+
+
+
+    <title>JavaScript Libraries & Browser Game Scripts | Hardy (Sid-the-sloth1) Documentation</title>
+
+
+
+    <meta name="description" content="Free, open-source JavaScript libraries for table sorting (SweetTable, SourTable) and DOM monitoring. Plus Tampermonkey scripts for Torn.com & CartelEmpire.online. Download or contribute today!">
+    
     <meta name="keywords"
-        content="JavaScript libraries, table sorting, SweetTable, SourTable, WaitForElements, web development, Tampermonkey scripts, Torn.com tools, CartelEmpire.online tools, userscripts">
+        content="JavaScript libraries, table sorting, SweetTable, SourTable, WaitForElements, web development tools, Tampermonkey scripts, Violentmonkey, userscripts, Chedburn, Christmas Town, Torn.com, Torn.com tools, CartelEmpire.online tools, game automation, DOM monitoring, network activity listener, Garland Assemble solver">
+
     <meta name="author" content="Sid The Sloth (Hardy)">
     <link rel="canonical" href="https://sid-the-sloth1.github.io/">
     <meta name="google-site-verification" content="g1EHB7r6RRB3Ioa-_hxz0rApg1rMswhGQ7xAxW9MjKA" />
@@ -42,7 +50,11 @@
       "@type": "WebSite",
       "name": "Hardy's Development Hub",
       "url": "https://sid-the-sloth1.github.io/",
-      "description": "JavaScript libraries for table sorting and network monitoring, plus game automation scripts"
+      "description": "JavaScript libraries for table sorting and network monitoring, plus game automation scripts",
+      "creator": {
+        "@type": "Person",
+        "name": "Hardy (Sid The Sloth)"
+      }
     }
     </script>
 
@@ -59,8 +71,8 @@
         <!-- Header -->
         <header class="header">
             <div class="logo">
-                <h1>Sid The Sloth (Hardy)</h1>
-                <span class="version">Documentation Hub</span>
+                <h1>JavaScript Libraries & Browser Games Scripts</h1>
+                <span class="version">Documentation for open-source tools by Hardy (Sid The Sloth)</span>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -97,7 +109,12 @@
         <!-- Main Content -->
         <main class="home-content">
 
-
+            <section class="intro">
+                <p>Welcome to my developer documentation hub. Here you'll find open-source (mostly) JavaScript libraries for
+                    table sorting, DOM monitoring, and network activity tracking, plus some Tampermonkey scripts for
+                    Torn.com and CartelEmpire.online.</p>
+                <p>All tools are free to use under MIT license. Contributions and feedback are welcome!</p>
+            </section>
             <!-- All Tols -->
             <section class="tools-section">
                 <h2 class="section-title">All Tools</h2>
@@ -112,7 +129,7 @@
                     <!-- Tool Row 1 -->
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg aria-label="SourTable icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M5.616 20q-.691 0-1.153-.462T4 18.384V5.616q0-.691.463-1.153T5.616 4h12.769q.69 0 1.153.463T20 5.616v12.769q0 .69-.462 1.153T18.384 20zm5.884-5.596H5v3.98q0 .27.173.443t.443.173H11.5zm1 0V19h5.885q.269 0 .442-.173t.173-.442v-3.981zm-1-1V8.769H5v4.635zm1 0H19V8.769h-6.5zM5 7.769h14V5.615q0-.269-.173-.442T18.385 5H5.615q-.269 0-.442.173T5 5.616z" />
                             </svg>
@@ -126,7 +143,7 @@
                             </div>
                             <div class="box2">
                                 <a href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/sourTable"
-                                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    target="_blank"><svg aria-label="Github Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
@@ -136,7 +153,7 @@
                     </div>
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg aria-label="SweetTable icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M8 22q-.825 0-1.412-.587T6 20V8q0-.825.588-1.412T8 6h12q.825 0 1.413.588T22 8v12q0 .825-.587 1.413T20 22zm0-2h5v-3H8zm7 0h5v-3h-5zM2 18V4q0-.825.588-1.412T4 2h14v2H4v14zm6-3h5v-3H8zm7 0h5v-3h-5zm-7-5h12V8H8z" />
                             </svg>
@@ -152,7 +169,7 @@
                             </div>
                             <div class="box2">
                                 <a href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/sweetTable"
-                                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    target="_blank"><svg aria-label="Github Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
@@ -163,7 +180,7 @@
 
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg aria-label="Wait For elements icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M6 2h12v6l-4 4l4 4v6H6v-6l4-4l-4-4zm10 14.5l-4-4l-4 4V20h8zm-4-5l4-4V4H8v3.5zM10 6h4v.75l-2 2l-2-2z" />
                             </svg>
@@ -179,7 +196,7 @@
                             </div>
                             <div class="box2">
                                 <a href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/waitForElement"
-                                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    target="_blank"><svg aria-label="Github Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
@@ -190,7 +207,7 @@
 
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg aria-label="Network Activity Listener icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2">
                                     <path d="M6 9a6 6 0 1 0 12 0A6 6 0 0 0 6 9" />
@@ -210,7 +227,7 @@
                             </div>
                             <div class="box2">
                                 <a href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/network_listener"
-                                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    target="_blank"><svg aria-label="Github Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
@@ -221,7 +238,7 @@
 
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg aria-label="Garland Assemble Solver icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2"
                                     d="M15.39 4.39a1 1 0 0 0 1.68-.474a2.5 2.5 0 1 1 3.014 3.015a1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474a2.5 2.5 0 1 0-3.014 3.015a1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474a2.5 2.5 0 1 1-3.014-3.015a1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474a2.5 2.5 0 1 0 3.014-3.015a1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z" />
@@ -229,7 +246,7 @@
                             <span>Garland Assemble Solver</span>
                         </div>
                         <div class="col-desc">A tool to solve the Garland Assemble mini-game at Christmas Town in
-                            Torn.com</div>
+                            <a href="https://www.torn.com/" target="_blank">Torn.com</a>. It is also used in my <a href="https://www.torn.com/forums.php#/p=threads&f=67&t=16201589&b=0&a=0" target="_blank">Christmas Town Helper Script</a>.</div>
                         <div class="col-version">v1.0.0</div>
                         <div class="col-action">
                             <div class="box1">
@@ -237,7 +254,7 @@
                             </div>
                             <div class="box2">
                                 <a href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/garlandSolver"
-                                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    target="_blank"><svg aria-label="Github Icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
@@ -248,7 +265,7 @@
 
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="8 8 32 32">
+                            <svg aria-label="Tampermonkey Scripts for Torn.com icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="8 8 32 32">
                                 <!-- Cropped viewBox -->
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     d="M25.312 28v-8h2.619c1.48 0 2.681 1.203 2.681 2.687s-1.2 2.686-2.681 2.686h-2.619m2.62.001l2.62 2.624M9.464 20h5.3m-2.65 8v-8m21.122 8v-8l5.3 8v-8m-18.502 8a2.65 2.65 0 0 1-2.65-2.65v-2.7a2.65 2.65 0 1 1 5.3 0v2.7a2.65 2.65 0 0 1-2.65 2.65"
@@ -264,7 +281,7 @@
                             <div class="box1"></div>
                             <div class="box2">
                                 <a href="https://github.com/sid-the-sloth1/torn-qol-scripts" target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-label="Github icon"width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
                                     </svg>
@@ -278,7 +295,7 @@
 
                     <div class="table-row">
                         <div class="col-name">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg aria-label="Tampermonkey Scripts for Cartel Empire icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M3 3h18v6.429h-3.111a6.428 6.428 0 1 0 0 5.143H21V21H3z" />
                             </svg>
                             <span>Tampermonkey Scripts for CartelEmpire.online</span>
@@ -288,7 +305,7 @@
                         <div class="col-action">
                             <div class="box1"></div>
                             <div class="box2">
-                                <a href="https://github.com/sid-the-sloth1/cartel_empire_public" target="_blank"><svg
+                                <a href="https://github.com/sid-the-sloth1/cartel_empire_public" target="_blank"><svg aria-label="Github icon"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
@@ -308,7 +325,7 @@
                     <div class="footer-col">
                         <h3>Connect</h3>
                         <div class="social-links">
-                            <a href="https://github.com/sid-the-sloth1" target="_blank" class="github-icon"><svg
+                            <a href="https://github.com/sid-the-sloth1" target="_blank" class="github-icon"><svg aria-label="Github icon"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor"
                                         d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />

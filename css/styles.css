@@ -421,3 +421,86 @@ body {
         font-size: 0.9rem;
     }
 }
+/* Intro Section */
+.intro {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 2rem 0 3rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    max-width: 100%;
+    width: 100%;
+}
+
+.intro p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    text-align: left; 
+    font-size: 1.05rem;
+}
+
+.intro p:last-child {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 1.25rem;
+        margin: 1.5rem 0;
+    }
+    
+    .intro p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro {
+        padding: 1rem;
+        margin: 1.25rem 0;
+        border-radius: 6px;
+    }
+    
+    .intro p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Links in description column */
+.col-desc a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    padding: 0 0.1em;
+}
+
+.col-desc a:hover {
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-hover);
+    text-decoration: none;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .col-desc a {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .col-desc a:hover {
+    color: var(--primary-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-desc a {
+        font-weight: 600; /* Slightly bolder on mobile for better visibility */
+    }
+}
