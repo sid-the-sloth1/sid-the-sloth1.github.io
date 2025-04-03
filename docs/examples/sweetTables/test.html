@@ -4,7 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SweetTable Test</title>
+    <title>SweetTable Comprehensive Test</title>
+
+    <meta name="description"
+        content="Comprehensive test page for SweetTable JavaScript library, demonstrating sorting capabilities with standard tables, div/ul-based tables, mixed content, and performance testing.">
+    <meta name="keywords"
+        content="SweetTable, JavaScript library, table sorting, performance test, custom tables, mixed content, Sid-the-sloth1, open source">
+    <meta name="author" content="Sid The Sloth (Hardy)">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sid-the-sloth1.github.io/docs/examples/sweetTables/test.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sid-the-sloth1.github.io/docs/examples/sweetTables/test.html">
+    <meta property="og:title" content="SweetTable Comprehensive Test | Sid-the-sloth1 Docs">
+    <meta property="og:description"
+        content="Test all features of SweetTable including standard tables, custom structures, mixed content, and performance with 1000 rows.">
+    <meta property="og:image" content="https://sid-the-sloth1.github.io/assets/meta/ogimg.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SweetTable Comprehensive Test | Sid-the-sloth1 Docs">
+    <meta name="twitter:description"
+        content="Complete testing environment for SweetTable JavaScript sorting library with various table structures and performance metrics.">
+    <meta name="twitter:image" content="https://sid-the-sloth1.github.io/assets/meta/twitter-card.png">
+    <meta name="twitter:image:alt" content="SweetTable Comprehensive Test Page">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SweetTable Comprehensive Test",
+  "url": "https://sid-the-sloth1.github.io/docs/examples/sweetTables/test.html",
+  "description": "Complete testing environment for SweetTable JavaScript sorting library",
+  "creator": {
+    "@type": "Person",
+    "name": "Hardy (Sid The Sloth)"
+  }
+}
+</script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,6 +91,37 @@
 
         .div-row {
             display: table-row;
+        }
+
+        .breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: "/";
+            margin: 0 0.5rem;
+            color: var(--border-color);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumbs [aria-current="page"] {
+            color: var(--on-bg-color);
+            font-weight: bold;
         }
 
         .div-cell {
@@ -107,6 +179,7 @@
         .controls {
             margin-bottom: 20px;
         }
+
         #back-to-homepage a {
             display: flex;
             align-items: center;
@@ -123,12 +196,28 @@
             height: 1em;
         }
     </style>
+    <!-- Shared Meta Assets (same as homepage) -->
+    <link rel="icon" href="../../../assets/meta/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/meta/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/meta/apple-touch-icon.png">
+    <meta name="google-site-verification" content="g1EHB7r6RRB3Ioa-_hxz0rApg1rMswhGQ7xAxW9MjKA" />
 </head>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../sweetTable.html">SweetTable</a></li>
+        <li aria-current="page">Interactive Demo</li>
+    </ol>
+</nav>
 
 <body>
     <div id="back-to-homepage">
         <a href="../../sweetTable.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" />
+            </svg>
             <span>Back to SweetTable Documentation</span>
         </a>
     </div>
@@ -459,11 +548,11 @@
             ulTableInstance.setCustomGetRowsFunction(table => {
                 return table.querySelectorAll(`div.ul_body .ul-row`);
             });
-/*
-            ulTableInstance.setCustomGetTbodyFunction(table => {
-                return table.querySelector(`div.ul_body`);
-            });
-            */
+            /*
+                        ulTableInstance.setCustomGetTbodyFunction(table => {
+                            return table.querySelector(`div.ul_body`);
+                        });
+                        */
 
             ulTableInstance.setCustomGetCellFromRowFunction(row => {
                 return row.querySelectorAll('.ul-cell');

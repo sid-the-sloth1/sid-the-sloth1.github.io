@@ -4,7 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SweetTable Demo</title>
+    <title>SweetTable Demo | Table Test</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Interactive demo for SweetTable - an advanced JavaScript library for sorting both standard HTML tables and custom table-like structures. Test features like custom parsing, excluded columns, and attribute-based sorting.">
+    <meta name="keywords"
+        content="SweetTable, JavaScript library, table sorting, custom tables, interactive demo, Sid-the-sloth1, open source">
+    <meta name="author" content="Sid The Sloth (Hardy)">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sid-the-sloth1.github.io/docs/examples/sweetTables/demo.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sid-the-sloth1.github.io/docs/examples/sweetTables/demo.html">
+    <meta property="og:title" content="SweetTable Demo - Interactive Testing | Sid-the-sloth1 Docs">
+    <meta property="og:description"
+        content="Interactive demo for SweetTable - an advanced JavaScript library for sorting both standard HTML tables and custom table-like structures.">
+    <meta property="og:image" content="https://sid-the-sloth1.github.io/assets/meta/ogimg.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SweetTable Demo - Interactive Testing | Sid-the-sloth1 Docs">
+    <meta name="twitter:description"
+        content="Interactive demo for SweetTable - an advanced JavaScript library for sorting both standard and custom tables.">
+    <meta name="twitter:image" content="https://sid-the-sloth1.github.io/assets/meta/twitter-card.png">
+    <meta name="twitter:image:alt" content="SweetTable Interactive Demo">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SweetTable Interactive Demo",
+  "url": "https://sid-the-sloth1.github.io/docs/examples/sweetTables/demo.html",
+  "description": "Interactive testing page for SweetTable JavaScript library",
+  "creator": {
+    "@type": "Person",
+    "name": "Hardy (Sid The Sloth)"
+  }
+}
+</script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,6 +90,37 @@
 
         tr:hover {
             background-color: #f5f5f5;
+        }
+
+        .breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: "/";
+            margin: 0 0.5rem;
+            color: var(--border-color);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumbs [aria-current="page"] {
+            color: var(--on-bg-color);
+            font-weight: bold;
         }
 
         .controls {
@@ -159,6 +231,7 @@
             color: #666666 !important;
             pointer-events: none !important;
         }
+
         #back-to-homepage a {
             display: flex;
             align-items: center;
@@ -176,14 +249,30 @@
         }
     </style>
     <!-- Prism.js for syntax highlighting -->
-<link href="../../../css/prism.css" rel="stylesheet">
-<script src="../../../js/prism.js"></script>
+    <link href="../../../css/prism.css" rel="stylesheet">
+    <script src="../../../js/prism.js"></script>
+    <!-- Shared Meta Assets (same as homepage) -->
+    <link rel="icon" href="../../../assets/meta/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/meta/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/meta/apple-touch-icon.png">
+    <meta name="google-site-verification" content="g1EHB7r6RRB3Ioa-_hxz0rApg1rMswhGQ7xAxW9MjKA" />
 </head>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../sweetTable.html">SweetTable</a></li>
+        <li aria-current="page">Interactive Demo</li>
+    </ol>
+</nav>
 
 <body>
     <div id="back-to-homepage">
         <a href="../../sweetTable.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" />
+            </svg>
             <span>Back to SweetTable Documentation</span>
         </a>
     </div>
@@ -532,7 +621,7 @@ function disengageCustomTable() {
         <div class="controls">
             <button id="initAttributeTable" onclick="initAttributeTable()">Initiate with Attribute Sorting</button>
             <button id="disengageAttributeTable" onclick="disengageAttributeTable()" disabled>Disengage</button>
-           
+
         </div>
 
         <div class="code-block">
@@ -672,7 +761,7 @@ function disengageAttributeTable() {
                 document.getElementById('initAttributeTable').disabled = false;
                 document.getElementById('disengageAttributeTable').disabled = true;
             }
-            
+
         }
 
         // Copy code function

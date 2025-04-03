@@ -4,11 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SourTable Demo</title>
+    <title>SourTable.js Demo | Table Sort Demo</title>
+    <meta name="description"
+        content="Live demo of SourTable.js - a lightweight JavaScript library for sorting HTML tables without dependencies. Try the interactive sorting features now.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="SourTable demo, JavaScript table sorting, HTML table sorter, vanilla JS library, interactive table demo">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sid-the-sloth1.github.io/docs/examples/sourTable/demo.html">
+
+    <!-- Shared Meta Assets (same as homepage) -->
+    <link rel="icon" href="../../../assets/meta/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/meta/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/meta/apple-touch-icon.png">
+
+
+    <!-- Open Graph / Facebook (using homepage assets) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sid-the-sloth1.github.io/docs/examples/sourTable/demo.html">
+    <meta property="og:title" content="SourTable.js Interactive Demo | Hardy's JavaScript Tools">
+    <meta property="og:description"
+        content="Try the live demo of our lightweight JavaScript table sorting library with interactive examples">
+    <meta property="og:image" content="https://sid-the-sloth1.github.io/assets/meta/ogimg.png">
+    <meta property="og:image:alt" content="SourTable.js Demo Preview">
+
+    <!-- Twitter (using homepage assets) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SourTable.js Interactive Demo">
+    <meta name="twitter:description"
+        content="Experience our JavaScript table sorting library with this live interactive demo">
+    <meta name="twitter:image" content="https://sid-the-sloth1.github.io/assets/meta/twitter-card.png">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "SourTable.js Demo",
+          "description": "Interactive demonstration of the SourTable JavaScript table sorting library",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web Browser",
+          "creator": {
+            "@type": "Person",
+            "name": "Hardy (Sid The Sloth)",
+            "url": "https://github.com/sid-the-sloth1"
+          }
+        }
+        </script>
     <!-- Prism.js for syntax highlighting -->
     <link href="../../../css/prism.css" rel="stylesheet">
     <script src="../../../js/prism.js"></script>
-
+    <meta name="google-site-verification" content="g1EHB7r6RRB3Ioa-_hxz0rApg1rMswhGQ7xAxW9MjKA" />
     <style>
         :root {
             --bg-color: #efebeb;
@@ -58,6 +105,37 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
             border-radius: 8px;
             overflow: hidden;
+        }
+
+        .breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: "/";
+            margin: 0 0.5rem;
+            color: var(--border-color);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumbs [aria-current="page"] {
+            color: var(--on-bg-color);
+            font-weight: bold;
         }
 
         thead {
@@ -215,6 +293,13 @@
         }
     </style>
 </head>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../sourTable.html">SourTable</a></li>
+        <li aria-current="page">Interactive Demo</li>
+    </ol>
+</nav>
 
 <body>
     <div id="back-to-homepage">

@@ -1,9 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>waitForElement.js Demo</title>
+    <title>waitForElement.js Interactive Demo</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Interactive demo for waitForElement.js - a JavaScript utility for reliably detecting DOM elements with configurable timeout and retry options.">
+    <meta name="keywords"
+        content="waitForElement, JavaScript, DOM monitoring, element detection, async elements, Sid-the-sloth1, open source">
+    <meta name="author" content="Sid The Sloth (Hardy)">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sid-the-sloth1.github.io/docs/examples/waitforelement/demo.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sid-the-sloth1.github.io/docs/examples/waitforelement/demo.html">
+    <meta property="og:title" content="waitForElement.js Interactive Demo | Sid-the-sloth1 Docs">
+    <meta property="og:description"
+        content="Test waitForElement.js capabilities with immediate, delayed, and multiple element detection scenarios.">
+    <meta property="og:image" content="https://sid-the-sloth1.github.io/assets/meta/ogimg.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="waitForElement.js Interactive Demo | Sid-the-sloth1 Docs">
+    <meta name="twitter:description"
+        content="Try the waitForElement.js library with different element detection scenarios in this interactive demo.">
+    <meta name="twitter:image" content="https://sid-the-sloth1.github.io/assets/meta/twitter-card.png">
+    <meta name="twitter:image:alt" content="waitForElement.js Demo">
+
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "waitForElement.js Interactive Demo",
+  "url": "https://sid-the-sloth1.github.io/docs/examples/waitforelement/demo.html",
+  "description": "Interactive testing environment for waitForElement.js JavaScript utility",
+  "creator": {
+    "@type": "Person",
+    "name": "Hardy (Sid The Sloth)"
+  }
+}
+</script>
+
+
     <link href="../../../css/prism.css" rel="stylesheet">
     <style>
         body {
@@ -14,16 +58,21 @@
             padding: 20px;
             color: #333;
         }
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             color: #2c3e50;
         }
+
         .demo-section {
             background: #f9f9f9;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         .test-area {
             border: 1px solid #ddd;
             padding: 15px;
@@ -31,6 +80,7 @@
             border-radius: 5px;
             background: white;
         }
+
         button {
             background: #3498db;
             color: white;
@@ -41,9 +91,11 @@
             font-size: 14px;
             margin: 5px 0;
         }
+
         button:hover {
             background: #2980b9;
         }
+
         .result {
             margin-top: 10px;
             padding: 10px;
@@ -51,21 +103,26 @@
             background: #f0f0f0;
             min-height: 20px;
         }
+
         .success {
             color: #27ae60;
         }
+
         .error {
             color: #e74c3c;
         }
+
         .dynamic-element {
             padding: 10px;
             margin: 5px 0;
             background: #eaf2f8;
             border-radius: 4px;
         }
+
         .code-container {
             position: relative;
         }
+
         .copy-btn {
             position: absolute;
             top: 5px;
@@ -78,9 +135,11 @@
             cursor: pointer;
             font-size: 12px;
         }
+
         .copy-btn:hover {
             background: #333;
         }
+
         #back-to-homepage a {
             display: flex;
             align-items: center;
@@ -90,6 +149,37 @@
 
         }
 
+        .breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs li {
+            display: flex;
+            align-items: center;
+        }
+
+        .breadcrumbs li:not(:last-child)::after {
+            content: "/";
+            margin: 0 0.5rem;
+            color: var(--border-color);
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumbs [aria-current="page"] {
+            color: var(--on-bg-color);
+            font-weight: bold;
+        }
+
         #back-to-homepage a svg {
             flex-shrink: 0;
             width: 1em;
@@ -97,20 +187,37 @@
             height: 1em;
         }
     </style>
+    <!-- Shared Meta Assets (same as homepage) -->
+    <link rel="icon" href="../../../assets/meta/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/meta/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/meta/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/meta/apple-touch-icon.png">
+    <meta name="google-site-verification" content="g1EHB7r6RRB3Ioa-_hxz0rApg1rMswhGQ7xAxW9MjKA" />
 </head>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="../../waitForElements.html">Wait for Elements</a></li>
+        <li aria-current="page">Interactive Demo</li>
+    </ol>
+</nav>
+
 <body>
     <div id="back-to-homepage">
         <a href="../../waitForElements.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z" />
+            </svg>
             <span>Back to the Documentation</span>
         </a>
     </div>
     <h1>waitForElement.js Demo</h1>
-    
+
     <div class="demo-section">
         <h2>Basic waitForElement Test</h2>
         <p>Test waiting for a single element that exists immediately</p>
-        
+
         <div class="code-container">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <pre><code class="language-javascript">waitForElement('#immediate-element')
@@ -123,18 +230,18 @@
         resultEl.classList.add('error');
     });</code></pre>
         </div>
-        
+
         <button onclick="testImmediateElement()">Run Test</button>
         <div class="test-area">
             <div id="immediate-element">This element exists immediately</div>
             <div class="result" id="immediate-result"></div>
         </div>
     </div>
-    
+
     <div class="demo-section">
         <h2>Dynamic Element Test</h2>
         <p>Test waiting for an element that appears after a delay</p>
-        
+
         <div class="code-container">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <pre><code class="language-javascript">// First click will create the element after 5 seconds
@@ -162,17 +269,17 @@ waitForElement('#delayed-element', 500, 20)
         resultEl.classList.add('error');
     });</code></pre>
         </div>
-        
+
         <button onclick="testDelayedElement()">Create Element and Run Test</button>
         <div class="test-area" id="delayed-test-area">
             <div class="result" id="delayed-result"></div>
         </div>
     </div>
-    
+
     <div class="demo-section">
         <h2>Multiple Elements Test</h2>
         <p>Test waiting for multiple elements matching a selector</p>
-        
+
         <div class="code-container">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <pre><code class="language-javascript">// Create 3 elements after 1 second
@@ -195,17 +302,17 @@ waitForElement('.dynamic-element', 400, 15, true)
         resultEl.classList.add('error');
     });</code></pre>
         </div>
-        
+
         <button onclick="testMultipleElements()">Run Multiple Elements Test</button>
         <div class="test-area" id="multiple-test-area">
             <div class="result" id="multiple-result"></div>
         </div>
     </div>
-    
+
     <div class="demo-section">
         <h2>Element That Never Appears</h2>
         <p>Test the error handling when an element doesn't appear</p>
-        
+
         <div class="code-container">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <pre><code class="language-javascript">// This element will never be created
@@ -220,17 +327,17 @@ waitForElement('#non-existent-element', 200, 3)
         resultEl.classList.add('error');
     });</code></pre>
         </div>
-        
+
         <button onclick="testNonExistentElement()">Run Nonexistent Element Test</button>
         <div class="test-area">
             <div class="result" id="nonexistent-result"></div>
         </div>
     </div>
-    
+
     <div class="demo-section">
         <h2>waitForPageLoad Test</h2>
         <p>Test waiting for the DOM to be fully loaded</p>
-        
+
         <div class="code-container">
             <button class="copy-btn" onclick="copyCode(this)">Copy</button>
             <pre><code class="language-javascript">waitForPageLoad()
@@ -239,7 +346,7 @@ waitForElement('#non-existent-element', 200, 3)
         resultEl.classList.add('success');
     });</code></pre>
         </div>
-        
+
         <button onclick="testPageLoad()">Run Page Load Test</button>
         <div class="test-area">
             <div class="result" id="pageload-result"></div>
@@ -248,7 +355,7 @@ waitForElement('#non-existent-element', 200, 3)
 
     <script src="../../../js/libs/waitForElement.js"></script>
     <script src="../../../js/prism.js"></script>
-    
+
     <script>
         // Copy code button functionality
         function copyCode(button) {
@@ -259,20 +366,20 @@ waitForElement('#non-existent-element', 200, 3)
             window.getSelection().addRange(range);
             document.execCommand('copy');
             window.getSelection().removeAllRanges();
-            
+
             const originalText = button.textContent;
             button.textContent = 'Copied!';
             setTimeout(() => {
                 button.textContent = originalText;
             }, 2000);
         }
-        
+
         // Test functions
         function testImmediateElement() {
             const resultEl = document.getElementById('immediate-result');
             resultEl.textContent = 'Testing...';
             resultEl.className = 'result';
-            
+
             waitForElement('#immediate-element')
                 .then(el => {
                     resultEl.textContent = `Found element with text: "${el.textContent}"`;
@@ -283,17 +390,17 @@ waitForElement('#non-existent-element', 200, 3)
                     resultEl.classList.add('error');
                 });
         }
-        
+
         function testDelayedElement() {
             const resultEl = document.getElementById('delayed-result');
             const testArea = document.getElementById('delayed-test-area');
             resultEl.textContent = 'Testing... (element will be created in 5 seconds)';
             resultEl.className = 'result';
-            
+
             // Remove any existing delayed element
             const existingEl = document.getElementById('delayed-element');
             if (existingEl) existingEl.remove();
-            
+
             // Create the element after a delay
             setTimeout(() => {
                 const el = document.createElement('div');
@@ -302,7 +409,7 @@ waitForElement('#non-existent-element', 200, 3)
                 el.textContent = 'This element appeared after 5 seconds';
                 testArea.insertBefore(el, resultEl);
             }, 5000);
-            
+
             // Try to find it
             waitForElement('#delayed-element', 500, 20)
                 .then(el => {
@@ -314,17 +421,17 @@ waitForElement('#non-existent-element', 200, 3)
                     resultEl.classList.add('error');
                 });
         }
-        
+
         function testMultipleElements() {
             const resultEl = document.getElementById('multiple-result');
             const testArea = document.getElementById('multiple-test-area');
             resultEl.textContent = 'Testing... (3 elements will be created in 1 second)';
             resultEl.className = 'result';
-            
+
             // Clear any existing elements
             const existingElements = testArea.querySelectorAll('.dynamic-element');
             existingElements.forEach(el => el.remove());
-            
+
             // Create elements after a delay
             setTimeout(() => {
                 for (let i = 1; i <= 3; i++) {
@@ -334,7 +441,7 @@ waitForElement('#non-existent-element', 200, 3)
                     testArea.insertBefore(el, resultEl);
                 }
             }, 1000);
-            
+
             // Try to find them
             waitForElement('.dynamic-element', 400, 15, true)
                 .then(elements => {
@@ -346,12 +453,12 @@ waitForElement('#non-existent-element', 200, 3)
                     resultEl.classList.add('error');
                 });
         }
-        
+
         function testNonExistentElement() {
             const resultEl = document.getElementById('nonexistent-result');
             resultEl.textContent = 'Testing... (this element will never appear)';
             resultEl.className = 'result';
-            
+
             waitForElement('#non-existent-element', 200, 3)
                 .then(el => {
                     resultEl.textContent = `Unexpected success - found element`;
@@ -362,23 +469,24 @@ waitForElement('#non-existent-element', 200, 3)
                     resultEl.classList.add('error');
                 });
         }
-        
+
         function testPageLoad() {
             const resultEl = document.getElementById('pageload-result');
             resultEl.textContent = 'Testing...';
             resultEl.className = 'result';
-            
+
             waitForPageLoad()
                 .then(() => {
                     resultEl.textContent = 'DOM is fully loaded';
                     resultEl.classList.add('success');
                 });
         }
-        
+
         // Initialize Prism for dynamic content
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             Prism.highlightAll();
         });
     </script>
 </body>
+
 </html>
