@@ -13,7 +13,7 @@
     <priority>1.00</priority>
     <image:image>
       <image:loc>https://sid-the-sloth1.github.io/assets/meta/ogimg.png</image:loc>
-      <image:title>JavaScript Libraries & Browser Game Scripts</image:title>
+      <image:title>JavaScript Libraries &amp; Browser Game Scripts</image:title>
     </image:image>
   </url>
 
@@ -100,5 +100,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
-
 </urlset>
