@@ -394,3 +394,73 @@ h1#introduction a {
     text-decoration: none;
     color: var(--github-icon);
 }
+
+/* ===== Breadcrumb Styles ===== */
+.breadcrumbs {
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+  }
+  
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .breadcrumbs li {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary); /* Use your existing color variable */
+  }
+  
+  .breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin: 0 0.5rem;
+    color: var(--text-tertiary);
+  }
+  
+  .breadcrumbs a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .breadcrumbs a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+  }
+  
+  .breadcrumbs [aria-current="page"] {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  
+  /* Mobile adaptation */
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .demo-cta {
+    margin: 2rem 0;
+  }
+  .demo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .demo-cta a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }

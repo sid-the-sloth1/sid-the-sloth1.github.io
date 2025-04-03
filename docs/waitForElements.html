@@ -2,11 +2,48 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaitForElements Documentation</title>
+    <!-- Existing meta tags -->
+    <title>WaitForElements.js - DOM Element Waiting Utility | Hardy's JavaScript Library</title>
+    <meta name="description"
+        content="Lightweight JavaScript utility for reliably waiting for DOM elements. Perfect for dynamic content, SPAs, and Tampermonkey scripts. Features configurable timeouts and Promise-based API.">
+        <meta name="google-site-verification" content="g1EHB7r6RRB3Ioa-_hxz0rApg1rMswhGQ7xAxW9MjKA" />
+    <meta name="keywords"
+        content="waitForElement JavaScript, DOM ready utility, element detection library, Promise-based DOM waiting, Tampermonkey DOM utility, dynamic content detection">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="WaitForElements.js - Smart DOM Element Waiting Utility">
+    <meta property="og:description"
+        content="Promise-based solution for detecting DOM elements in dynamic applications. Essential for Tampermonkey scripts and SPAs.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WaitForElements.js Documentation">
+    <meta name="twitter:description" content="Reliable element detection for dynamic web apps and userscripts">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "APIReference",
+          "name": "waitForElement.js",
+          "description": "JavaScript utility for waiting for DOM elements to appear",
+          "programmingLanguage": "JavaScript",
+          "license": "MIT",
+          "version": "1.0.0",
+          "producer": {
+            "@type": "Person",
+            "name": "Hardy (Sid The Sloth)",
+            "url": "https://github.com/sid-the-sloth1"
+          }
+        }
+        </script>
     <link href="../css/doc.css" rel="stylesheet">
+
 </head>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li aria-current="page">waitForElement.js</li>
+    </ol>
+</nav>
 
 <body>
     <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -37,11 +74,13 @@
                 </a>
             </div>
             <header>
-                <h1 id="introduction"><span>waitForElement.js Documentation</span><a href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/waitForElement" target="_blank"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="currentColor"
-                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
-                </svg></a></h1>
+                <h1 id="introduction"><span>waitForElement.js Documentation</span><a
+                        href="https://github.com/sid-the-sloth1/libraries/tree/main/libs/waitForElement"
+                        target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
+                        </svg></a></h1>
                 <p class="lead">A utility library for waiting for elements to appear in the DOM. Provides reliable
                     element detection with configurable timeout and retry options, supporting both single elements and
                     multiple elements matching a selector.</p>
@@ -119,7 +158,8 @@
                                 <td>multiple</td>
                                 <td>Boolean</td>
                                 <td>false</td>
-                                <td>If <code>true</code>, waits for multiple elements (returns NodeList). If <code>false</code>, waits for single
+                                <td>If <code>true</code>, waits for multiple elements (returns NodeList). If
+                                    <code>false</code>, waits for single
                                     element (returns Element) (optional)</td>
                             </tr>
                         </tbody>
@@ -163,7 +203,8 @@
 
                     <div class="note">
                         <p><strong>Note:</strong> This function is useful when you need to ensure the DOM is ready
-                            before performing operations, similar to <code>DOMContentLoaded</code> event and Tampermonkey's <code>@run-at document-end</code> but with
+                            before performing operations, similar to <code>DOMContentLoaded</code> event and
+                            Tampermonkey's <code>@run-at document-end</code> but with
                             Promise interface.</p>
                     </div>
                 </div>
@@ -184,7 +225,7 @@
             });</code></pre>
                 </div>
 
-        
+
 
                 <div class="feature-card">
                     <h3 id="async-await">Using with async/await</h3>
@@ -220,11 +261,16 @@
             }
         });</code></pre>
                 </div>
-                <div class="feature-card">
-                    <p>For more examples and seeing it in action, go to the below link:</p>
-                    <a href="examples/waitforelement/demo.html">Link</a>
+                <div class="demo-cta">
+                    <a href="examples/waitforelement/demo.html" class="demo-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M8 5v14l11-7z" />
+                        </svg>
+                        Live Interactive Demo
+                    </a>
+                    <p class="demo-description">See waitForElement in action with real-world scenarios</p>
                 </div>
-                
+
             </section>
 
             <footer>

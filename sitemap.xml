@@ -1,77 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage (Highest Priority) -->
+  <url>
+    <loc>https://sid-the-sloth1.github.io/</loc>
+    <lastmod>2025-04-01T03:23:25+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://sid-the-sloth1.github.io/assets/meta/ogimg.png</image:loc>
+      <image:title>JavaScript Libraries & Browser Game Scripts</image:title>
+    </image:image>
+  </url>
 
+  <!-- Core Documentation Pages -->
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/network-listeners.html</loc>
+    <lastmod>2025-03-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/sourTable.html</loc>
+    <lastmod>2025-03-25T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/sweetTable.html</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/waitForElements.html</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-<url>
-  <loc>https://sid-the-sloth1.github.io/</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/sourTable.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/sweetTable.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/waitForElements.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/network-listeners.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/garland/index.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/index.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/sourTable/demo.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/sourTable/test.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/sweetTables/demo.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/sweetTables/test.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/sweetTables/non-TABLE-tables.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sid-the-sloth1.github.io/docs/examples/waitforelement/demo.html</loc>
-  <lastmod>2025-04-01T03:23:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <!-- Example/Demo Pages (Lower Priority) -->
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/garland/index.html</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/sourTable/demo.html</loc>
+    <lastmod>2025-02-05T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+    <image:image>
+      <image:loc>https://sid-the-sloth1.github.io/assets/examples/sourTable-demo.png</image:loc>
+      <image:title>SourTable Demo Preview</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/sweetTables/demo.html</loc>
+    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
+  </url>
 
+  <!-- Testing Pages (Lowest Priority) -->
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/sourTable/test.html</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.10</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/sweetTables/test.html</loc>
+    <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.10</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/sweetTables/non-TABLE-tables.html</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.10</priority>
+  </url>
+  
+  <url>
+    <loc>https://sid-the-sloth1.github.io/docs/examples/waitforelement/demo.html</loc>
+    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
 
 </urlset>
