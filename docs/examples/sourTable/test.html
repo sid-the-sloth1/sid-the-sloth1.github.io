@@ -51,94 +51,61 @@
 }
 </script>
     <style>
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --primary-color: #5d8bf4;
+            --primary-variant: #7da3f6;
+            --secondary-color: #03dac6;
+            --error-color: #cf6679;
+            --on-bg-color: #e0e0e0;
+            --on-surface-color: #ffffff;
+            --on-primary-color: #000000;
+            --border-color: #333333;
+            --header-bg: #2d2d2d;
+            --header-text: #ffffff;
+            --success-color: #4CAF50;
+            --code-bg: #252525;
+            --hover-bg: rgba(255, 255, 255, 0.05);
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--on-bg-color);
+            padding: 20px;
+            line-height: 1.6;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
         }
 
-        .test-section {
-            margin-bottom: 40px;
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        h2 {
-            color: #333;
-            border-bottom: 1px solid #eee;
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
+            margin-top: 1.5em;
+        }
+
+        .demo-section,
+        .test-section {
+            background-color: var(--surface-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .test-controls {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #f8f8f8;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 8px 12px;
-            margin-right: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .error {
-            color: red;
-            margin: 10px 0;
-        }
-
-        .success {
-            color: green;
-            margin: 10px 0;
-        }
-
-        button:disabled,
-        button:disabled:hover {
-            background-color: #cccccc !important;
-            cursor: not-allowed !important;
-        }
-
-        #back-to-homepage a {
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            /* Adjust based on font size (e.g., 0.5em = half the font size) */
-            text-decoration: none;
-
-        }
-
-        #back-to-homepage a svg {
-            flex-shrink: 0;
-            width: 1em;
-            /* Makes SVG size match text size */
-            height: 1em;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
         }
 
         .breadcrumbs ol {
@@ -170,6 +137,133 @@
         .breadcrumbs [aria-current="page"] {
             color: var(--on-bg-color);
             font-weight: bold;
+        }
+
+    
+
+        th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-color);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        th:hover {
+            background-color: rgba(93, 139, 244, 0.1);
+        }
+
+        td {
+            padding: 10px 15px;
+            color: var(--on-surface-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tbody tr {
+            transition: background-color 0.2s;
+        }
+
+        tbody tr:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .controls,
+        .test-controls {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: var(--primary-variant);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #disengage,
+        #disengageTest1 {
+            background-color: var(--error-color);
+            color: white;
+        }
+
+        #disengage:hover,
+        #disengageTest1:hover {
+            background-color: #f28499;
+        }
+
+        
+
+        .error {
+            color: var(--error-color);
+            background-color: rgba(207, 102, 121, 0.2);
+        }
+
+        .success {
+            color: var(--success-color);
+            background-color: rgba(76, 175, 80, 0.2);
+        }
+
+   
+
+      
+
+        
+
+        button:disabled,
+        button:disabled:hover {
+            background-color: #444444 !important;
+            color: #888888 !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        #back-to-homepage a {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        #back-to-homepage a svg {
+            flex-shrink: 0;
+            width: 1em;
+            height: 1em;
+        }
+
+        #back-to-homepage {
+            margin: 10px 0;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .controls,
+            .test-controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>

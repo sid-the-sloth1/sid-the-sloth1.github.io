@@ -50,142 +50,152 @@
 
     <link href="../../../css/prism.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            color: #333;
-        }
+       :root {
+    --primary-color: #5d8bf4;
+    --on-bg-color: #f6f3f3;
+    --bg-color: #1e1e1e;
+    --secondary-bg: #2b2b2b;
+    --border-color: #444;
+}
 
-        h1,
-        h2,
-        h3 {
-            color: #2c3e50;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--on-bg-color);
+    background-color: var(--bg-color);
+}
 
-        .demo-section {
-            background: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+h1, h2, h3 {
+    color: var(--primary-color);
+}
 
-        .test-area {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-            background: white;
-        }
+.demo-section {
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: var(--on-bg-color);
+}
 
-        button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            margin: 5px 0;
-        }
+.test-area {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: var(--on-bg-color);
+}
 
-        button:hover {
-            background: #2980b9;
-        }
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px 0;
+}
 
-        .result {
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 4px;
-            background: #f0f0f0;
-            min-height: 20px;
-        }
+button:hover {
+    background: #4a78e0;
+}
 
-        .success {
-            color: #27ae60;
-        }
+.result {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    background: #2d2d2d;
+    color: var(--on-bg-color);
+    min-height: 20px;
+}
 
-        .error {
-            color: #e74c3c;
-        }
+.success {
+    color: #27ae60;
+}
 
-        .dynamic-element {
-            padding: 10px;
-            margin: 5px 0;
-            background: #eaf2f8;
-            border-radius: 4px;
-        }
+.error {
+    color: #e74c3c;
+}
 
-        .code-container {
-            position: relative;
-        }
+.dynamic-element {
+    padding: 10px;
+    margin: 5px 0;
+    background: #3a3a3a;
+    border-radius: 4px;
+    color: var(--on-bg-color);
+}
 
-        .copy-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #555;
-            color: white;
-            border: none;
-            padding: 3px 8px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 12px;
-        }
+.code-container {
+    position: relative;
+}
 
-        .copy-btn:hover {
-            background: #333;
-        }
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
 
-        #back-to-homepage a {
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            /* Adjust based on font size (e.g., 0.5em = half the font size) */
-            text-decoration: none;
+.copy-btn:hover {
+    background: #333;
+}
 
-        }
+#back-to-homepage a {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+    color: var(--primary-color);
+}
 
-        .breadcrumbs ol {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            padding: 0;
-            margin: 0 0 2rem 0;
-            list-style: none;
-            font-size: 0.9rem;
-        }
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    list-style: none;
+    font-size: 0.9rem;
+}
 
-        .breadcrumbs li {
-            display: flex;
-            align-items: center;
-        }
+.breadcrumbs li {
+    display: flex;
+    align-items: center;
+}
 
-        .breadcrumbs li:not(:last-child)::after {
-            content: "/";
-            margin: 0 0.5rem;
-            color: var(--border-color);
-        }
+.breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.5rem;
+    color: var(--border-color);
+}
 
-        .breadcrumbs a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+.breadcrumbs a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
 
-        .breadcrumbs [aria-current="page"] {
-            color: var(--on-bg-color);
-            font-weight: bold;
-        }
+.breadcrumbs [aria-current="page"] {
+    color: var(--on-bg-color);
+    font-weight: bold;
+}
 
-        #back-to-homepage a svg {
-            flex-shrink: 0;
-            width: 1em;
-            /* Makes SVG size match text size */
-            height: 1em;
-        }
+#back-to-homepage a svg {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+}
+
     </style>
     <!-- Shared Meta Assets (same as homepage) -->
     <link rel="icon" href="../../../assets/meta/favicon.ico" type="image/x-icon">
